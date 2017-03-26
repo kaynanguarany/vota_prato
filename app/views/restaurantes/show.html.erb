@@ -29,6 +29,15 @@
   <p>Preço médio: </p>
   <%= @restaurante.qualificacoes.average(:valor_gasto) %>
 </p>
+
+<p>
+  <p>Foto: </p>
+  <%= image_tag @restaurante.foto.url(:thumb) %>
+</p>
 <%= link_to "Qualificar este restaurante", controller: "qualificacoes", action: "new", restaurante: @restaurante %>
 <%= link_to "Editar", action: "edit", id: @restaurante %>
 <%= link_to "Voltar", action: "index" %>
+
+<%= novo_comentario @restaurante %>
+
+<%= comentarios @restaurante %>

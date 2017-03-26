@@ -1,6 +1,6 @@
 class RestaurantesController < ApplicationController
   def index
-    @restaurantes = Restaurante.order :nome
+    @restaurantes = Restaurante.order(:nome).page(params[:page]).per(2)
     render "index"
   end
 
@@ -42,6 +42,6 @@ class RestaurantesController < ApplicationController
   end
 
   def restaurante_params
-    params.require(:restaurante).permit(:nome, :endereco, :especialidade)
+    params.require(:restaurante).permit(:nome, :endereco, :especialidade, :foto)
   end
 end

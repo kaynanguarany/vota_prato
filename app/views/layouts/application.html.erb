@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <ul>
+    <%= menu_principal %w[clientes qualificacoes restaurantes] %>
+  </ul>
 
 <%= yield %>
 
+<script>
+  <%= yield :js %>
+</script>
 </body>
 </html>
