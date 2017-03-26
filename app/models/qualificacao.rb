@@ -13,7 +13,7 @@ class Qualificacao < ActiveRecord::Base
                             greater_than_or_equal_to: 0,
                             less_than_or_equal_to: 10,
                             message: " - deve ser um numero de 0 a 10"
-  validates_numericality_of :valor_gasto
+  validates_numericality_of :valor_gasto,
                             greater_than: 0,
                             message: " - deve ser um numero maior de 0"
 end
