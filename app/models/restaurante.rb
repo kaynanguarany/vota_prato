@@ -2,6 +2,7 @@ class Restaurante < ActiveRecord::Base
 
   has_many :qualificacoes
   has_and_belongs_to_many :pratos
+  has_many :comentarios, as: :comentavel
 
   validates_presence_of :nome, message: "Deve ser preenchido"
   validates_presence_of :endereco, message: "Deve ser preenchido"
